@@ -1,0 +1,8 @@
+@ECHO OFF
+
+SET OPTIMIZER_VERSION=0.16.0
+
+IF NOT "%~1"=="" SET OPTIMIZER_VERSION=%~1
+
+ECHO docker build --build-arg OPTIMIZER_VERSION=%OPTIMIZER_VERSION% -t cosmwasm-build:%OPTIMIZER_VERSION% .
+docker build --build-arg OPTIMIZER_VERSION=%OPTIMIZER_VERSION% -t cosmwasm-build:%OPTIMIZER_VERSION% .
